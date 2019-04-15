@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 import numpy as np
 import physics as ph
@@ -52,16 +53,16 @@ flag = 0
 
 for iStep in range(nStep):
     if ( p[1] <= 0 or p[1] >= Lx or p[2] <= 0 or p[2] >= Ly ):
-        print "You lose!"
+        print ("You lose!")
         break
     for point in win:
         if ( (abs(p[1]-point[0]) < hx) and (abs(p[2]-point[1]) < hy) ):
-            print "You win!"
+            print ("You win!")
             flag = 1
             break
     for point in lose:
         if ( (abs(p[1]-point[0]) < hx) and (abs(p[2]-point[1]) < hy) ):
-            print "You lose!"
+            print ("You lose!")
             flag = 2
             break
     if (flag != 0):
