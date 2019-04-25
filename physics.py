@@ -72,3 +72,9 @@ def field(V, hx, hy):      #returns field when given potential
     fx = np.gradient(V, hx, axis=1)
     fy = np.gradient(V, hy, axis=0)
     return fx, fy 
+
+def rotate(x, y, theta):
+    theta = np.radians(theta)
+    x_prime = x*np.cos(theta) - y*np.sin(theta)
+    y_prime = x*np.sin(theta) + y*np.cos(theta)
+    return x_prime, y_prime
